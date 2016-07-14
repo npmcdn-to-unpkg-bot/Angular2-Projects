@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', './childOne', './childTwo'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,27 +10,34 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var aboutComponent;
+    var core_1, childOne_1, childTwo_1;
+    var parentComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (childOne_1_1) {
+                childOne_1 = childOne_1_1;
+            },
+            function (childTwo_1_1) {
+                childTwo_1 = childTwo_1_1;
             }],
         execute: function() {
-            aboutComponent = (function () {
-                function aboutComponent() {
+            parentComponent = (function () {
+                function parentComponent() {
                 }
-                aboutComponent = __decorate([
+                parentComponent = __decorate([
                     core_1.Component({
-                        selector: 'about',
-                        templateUrl: 'components/about/about.html'
+                        selector: 'parent',
+                        templateUrl: 'components/TreeComp/ParentComp.html',
+                        directives: [childOne_1.childOneComponent, childTwo_1.childTwoComponent]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], aboutComponent);
-                return aboutComponent;
+                ], parentComponent);
+                return parentComponent;
             }());
-            exports_1("aboutComponent", aboutComponent);
+            exports_1("parentComponent", parentComponent);
         }
     }
 });

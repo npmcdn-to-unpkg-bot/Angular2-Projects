@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,31 +10,28 @@ System.register(['@angular/core', '@angular/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
-    var AppComponent;
+    var core_1;
+    var bindPropComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            bindPropComponent = (function () {
+                function bindPropComponent() {
+                    this.name = "Muzzammil";
                 }
-                AppComponent = __decorate([
+                bindPropComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: 'components/home/home.html',
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        selector: 'binding_properties',
+                        templateUrl: 'components/binding_properties/binding_properties.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], bindPropComponent);
+                return bindPropComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("bindPropComponent", bindPropComponent);
         }
     }
 });

@@ -1,21 +1,45 @@
 import { RouterConfig, provideRouter } from '@angular/router'
-import { AppComponent } from '../components/home/home'
-import { aboutComponent } from '../components/about/about'
+import { tempVarComponent } from '../components/template_variables/template_variables'
+
+import { AppComponent } from '../components/app/app'
+import { ArrComponent } from '../components/arrays/arrays'
+import { parentChildComponent } from '../components/parentChild/parent'
+parentComponent
+import { parentComponent } from '../components/TreeComp/ParentComp'
+
+import { bindPropComponent } from '../components/binding_properties/binding_properties'
+import { EventComponent } from '../components/events/events'
 
 export const routes: RouterConfig = [
     {
-        path: 'home',
-        component: AppComponent
+        path: 'template_variables',
+        component: tempVarComponent
     },
     
     {
-        path:'about',
-        component:aboutComponent
+        path:'arrays',
+        component:ArrComponent
+    },
+    
+    {
+        path:'bindProp',
+        component:bindPropComponent
+    },
+     {
+        path:'events',
+        component:EventComponent
+    },
+    {
+        path:'parentChild',
+        component:parentChildComponent
+    },
+     {
+        path:'TreeComp',
+        component:parentComponent
     },
     {
         path:'',
-        redirectTo:'/home',
-        terminal:true
+        redirectTo:'/template_variables',terminal: true       
     },
 
 ];

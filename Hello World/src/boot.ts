@@ -1,5 +1,5 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { AppComponent } from './components/home/home';
+import { AppComponent } from './components/app/app';
 
 import { APP_ROUTER_PROVIDERS } from './routes/routes';
 
