@@ -4,13 +4,22 @@ import { tempVarComponent } from '../components/template_variables/template_vari
 import { AppComponent } from '../components/app/app'
 import { ArrComponent } from '../components/arrays/arrays'
 import { parentChildComponent } from '../components/parentChild/parent'
-parentComponent
 import { parentComponent } from '../components/TreeComp/ParentComp'
+
+import { parentCompo } from '../components/childInput/parentComp'
+import { ParentPairCompo } from '../components/componentList/parentPairComp'
 
 import { bindPropComponent } from '../components/binding_properties/binding_properties'
 import { EventComponent } from '../components/events/events'
 
 export const routes: RouterConfig = [
+    
+    {
+        path:'',
+        redirectTo:'/template_variables',
+        pathMatch:'full'      
+    },
+
     {
         path: 'template_variables',
         component: tempVarComponent
@@ -38,9 +47,14 @@ export const routes: RouterConfig = [
         component:parentComponent
     },
     {
-        path:'',
-        redirectTo:'/template_variables',terminal: true       
+        path:'childInput',
+        component:parentCompo
     },
+     {
+        path:'componentList',
+        component:ParentPairCompo
+    },
+    
 
 ];
 

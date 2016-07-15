@@ -1,7 +1,7 @@
-System.register(['@angular/router', '../components/template_variables/template_variables', '../components/arrays/arrays', '../components/parentChild/parent', '../components/TreeComp/ParentComp', '../components/binding_properties/binding_properties', '../components/events/events'], function(exports_1, context_1) {
+System.register(['@angular/router', '../components/template_variables/template_variables', '../components/arrays/arrays', '../components/parentChild/parent', '../components/TreeComp/ParentComp', '../components/childInput/parentComp', '../components/componentList/parentPairComp', '../components/binding_properties/binding_properties', '../components/events/events'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, template_variables_1, arrays_1, parent_1, ParentComp_1, binding_properties_1, events_1;
+    var router_1, template_variables_1, arrays_1, parent_1, ParentComp_1, parentComp_1, parentPairComp_1, binding_properties_1, events_1;
     var routes, APP_ROUTER_PROVIDERS;
     return {
         setters:[
@@ -20,6 +20,12 @@ System.register(['@angular/router', '../components/template_variables/template_v
             function (ParentComp_1_1) {
                 ParentComp_1 = ParentComp_1_1;
             },
+            function (parentComp_1_1) {
+                parentComp_1 = parentComp_1_1;
+            },
+            function (parentPairComp_1_1) {
+                parentPairComp_1 = parentPairComp_1_1;
+            },
             function (binding_properties_1_1) {
                 binding_properties_1 = binding_properties_1_1;
             },
@@ -27,8 +33,12 @@ System.register(['@angular/router', '../components/template_variables/template_v
                 events_1 = events_1_1;
             }],
         execute: function() {
-            ParentComp_1.parentComponent;
             exports_1("routes", routes = [
+                {
+                    path: '',
+                    redirectTo: '/template_variables',
+                    pathMatch: 'full'
+                },
                 {
                     path: 'template_variables',
                     component: template_variables_1.tempVarComponent
@@ -54,8 +64,12 @@ System.register(['@angular/router', '../components/template_variables/template_v
                     component: ParentComp_1.parentComponent
                 },
                 {
-                    path: '',
-                    redirectTo: '/template_variables', terminal: true
+                    path: 'childInput',
+                    component: parentComp_1.parentCompo
+                },
+                {
+                    path: 'componentList',
+                    component: parentPairComp_1.ParentPairCompo
                 },
             ]);
             exports_1("APP_ROUTER_PROVIDERS", APP_ROUTER_PROVIDERS = [
