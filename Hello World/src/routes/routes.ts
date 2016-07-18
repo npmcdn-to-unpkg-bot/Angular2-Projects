@@ -11,6 +11,9 @@ import { ParentPairCompo } from '../components/componentList/parentPairComp'
 
 import { bindPropComponent } from '../components/binding_properties/binding_properties'
 import { EventComponent } from '../components/events/events'
+import { ReusableComponent } from '../components/reusableComp/reusableComp'
+
+ReusableComponent
 
 export const routes: RouterConfig = [
     
@@ -54,8 +57,10 @@ export const routes: RouterConfig = [
         path:'componentList',
         component:ParentPairCompo
     },
-    
-
+  {
+        path:'reusableComp',
+        component:ReusableComponent
+    },
 ];
 
 export const APP_ROUTER_PROVIDERS = [
