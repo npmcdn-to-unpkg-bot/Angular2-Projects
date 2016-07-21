@@ -1,7 +1,7 @@
-System.register(['@angular/router', '../components/template_variables/template_variables', '../components/arrays/arrays', '../components/parentChild/parent', '../components/TreeComp/ParentComp', '../components/childInput/parentComp', '../components/componentList/parentPairComp', '../components/binding_properties/binding_properties', '../components/events/events', '../components/reusableComp/reusableComp'], function(exports_1, context_1) {
+System.register(['@angular/router', '../components/template_variables/template_variables', '../components/arrays/arrays', '../components/parentChild/parent', '../components/TreeComp/ParentComp', '../components/childInput/parentComp', '../components/componentList/parentPairComp', '../components/binding_properties/binding_properties', '../components/events/events', '../components/reusableComp/reusableComp', '../components/MultipleSteps/mutipleSteps'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, template_variables_1, arrays_1, parent_1, ParentComp_1, parentComp_1, parentPairComp_1, binding_properties_1, events_1, reusableComp_1;
+    var router_1, template_variables_1, arrays_1, parent_1, ParentComp_1, parentComp_1, parentPairComp_1, binding_properties_1, events_1, reusableComp_1, mutipleSteps_1;
     var routes, APP_ROUTER_PROVIDERS;
     return {
         setters:[
@@ -34,6 +34,9 @@ System.register(['@angular/router', '../components/template_variables/template_v
             },
             function (reusableComp_1_1) {
                 reusableComp_1 = reusableComp_1_1;
+            },
+            function (mutipleSteps_1_1) {
+                mutipleSteps_1 = mutipleSteps_1_1;
             }],
         execute: function() {
             reusableComp_1.ReusableComponent;
@@ -78,6 +81,10 @@ System.register(['@angular/router', '../components/template_variables/template_v
                 {
                     path: 'reusableComp',
                     component: reusableComp_1.ReusableComponent
+                },
+                {
+                    path: 'multipleSteps',
+                    component: mutipleSteps_1.multipleComponent
                 },
             ]);
             exports_1("APP_ROUTER_PROVIDERS", APP_ROUTER_PROVIDERS = [

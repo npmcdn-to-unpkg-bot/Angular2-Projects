@@ -15,17 +15,13 @@ var path = {
   lib: [
     { dist: 'lib/@angular', src: 'node_modules/@angular/**' },
     { dist: 'lib/angular2-in-memory-web-api', src: 'node_modules/angular2-in-memory-web-api/**' },
-    { dist: 'lib/angular2-localstorage', src: 'node_modules/angular2-localstorage/dist/**' },
     { dist: 'lib/rxjs', src: 'node_modules/rxjs/**' },
-    { dist: 'lib/bootstrap', src: 'node_modules/bootstrap/dist/**' },
-    { dist: 'lib/font-awesome', src: 'node_modules/font-awesome/**' }
   ],
   libjs: [
     { dist: 'lib/zone', src: 'node_modules/zone.js/dist/zone.js' },
     { dist: 'lib/reflect-metadata', src: 'node_modules/reflect-metadata/Reflect.js' },
     { dist: 'lib/reflect-metadata', src: 'node_modules/reflect-metadata/Reflect.js.map' },
     { dist: 'lib/system', src: 'node_modules/systemjs/dist/system.src.js' },
-    { dist: 'lib/jquery', src: 'node_modules/jquery/dist/jquery.js' },
   ],
   libcss: [],
   libfonts: [],
@@ -36,7 +32,8 @@ var path = {
   dist: 'dist',
   distapp: 'dist/components',
   distlib: 'dist/lib',
-  distfonts: 'dist/fonts'
+  distfonts: 'dist/fonts',
+  distImg:'dist/assets/img'
 };
 
 // Clean the Contents of the Distribution Directory
@@ -60,6 +57,12 @@ gulp.task('copy:html', function () {
 gulp.task('copy:css', function () {
   return gulp.src(path.css)
     .pipe(gulp.dest(path.distapp));
+});
+
+// Copy fonts from a module outside of our project (like Bower)
+gulp.task('copyImages', function() {
+	gulp.src('./src/assets/img/**/*')
+	.pipe(gulp.dest(path.distImg));
 });
 
 // copy Libs
@@ -87,11 +90,11 @@ gulp.task('copy:fonts', function () {
 });
 
 // Transpile angular2-localstorage
-gulp.task('transpile-angular2-localstorage', function () {
-  return gulp.src('node_modules/angular2-localstorage')
-    .pipe(typescript(tscConfig.compilerOptions))
-    .pipe(gulp.dest('node_modules/angular2-localstorage'));
-})
+// gulp.task('transpile-angular2-localstorage', function () {
+//   return gulp.src('node_modules/angular2-localstorage')
+//     .pipe(typescript(tscConfig.compilerOptions))
+//     .pipe(gulp.dest('node_modules/angular2-localstorage'));
+// })
 
 // TypeScript Transpile
 gulp.task('transpile', function () {
@@ -102,7 +105,7 @@ gulp.task('transpile', function () {
 });
 
 // Build Project
-gulp.task('build', sequence('clean', 'transpile-angular2-localstorage', 'copy:index', 'copy:html', 'copy:css', 'copy:lib', 'copy:libjs', 'copy:libcss', 'copy:fonts', 'transpile'));
+gulp.task('build', sequence('clean', 'copy:index', 'copy:html', 'copy:css', 'copy:lib', 'copy:libjs', 'copy:libcss', 'copy:fonts','copyImages', 'transpile'));
 
 // Default Task
 gulp.task('default', sequence('build', ['serve', 'watch']));

@@ -22,7 +22,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 function ArrComponent() {
                     this.names = [];
                     this.names = ['MuZz', 'saad', 'Yousuf', 'Aamir'];
+                    this.choice = 0;
                 }
+                ArrComponent.prototype.nextChoice = function () {
+                    this.choice++;
+                };
                 ArrComponent = __decorate([
                     core_1.Component({
                         selector: 'arrays',

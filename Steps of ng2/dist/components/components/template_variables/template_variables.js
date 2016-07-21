@@ -20,8 +20,15 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             tempVarComponent = (function () {
                 function tempVarComponent() {
+                    this.show = false;
                     this.name = 'Muzzammil';
                 }
+                tempVarComponent.prototype.showMsg = function () {
+                    this.show = true;
+                };
+                tempVarComponent.prototype.hideMsg = function () {
+                    this.show = false;
+                };
                 tempVarComponent = __decorate([
                     core_1.Component({
                         selector: 'template_variables',
