@@ -4,12 +4,16 @@ import { childComponent } from './childOne'
 
 @Component({
     selector: 'parent',
-        templateUrl: 'components/parentChild/parent.html',
-        directives:[childComponent]
-
+    templateUrl: 'components/parentChild/parent.html',
+    directives: [childComponent],
 })
-export class parentChildComponent  {
-    constructor() { }
+export class parentChildComponent {
+
+    myValue: string;
+    constructor() {
+        this.myValue = "MuZz"
+
+    }
 
 
 }

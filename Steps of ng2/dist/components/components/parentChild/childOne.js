@@ -20,7 +20,13 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             childComponent = (function () {
                 function childComponent() {
+                    console.log(this.name, 'name');
+                    // this.myValue="saad"
                 }
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], childComponent.prototype, "name", void 0);
                 childComponent = __decorate([
                     core_1.Component({
                         selector: 'child-one',

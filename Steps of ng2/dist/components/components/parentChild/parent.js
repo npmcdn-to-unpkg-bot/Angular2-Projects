@@ -23,12 +23,13 @@ System.register(['@angular/core', './childOne'], function(exports_1, context_1) 
         execute: function() {
             parentChildComponent = (function () {
                 function parentChildComponent() {
+                    this.myValue = "MuZz";
                 }
                 parentChildComponent = __decorate([
                     core_1.Component({
                         selector: 'parent',
                         templateUrl: 'components/parentChild/parent.html',
-                        directives: [childOne_1.childComponent]
+                        directives: [childOne_1.childComponent],
                     }), 
                     __metadata('design:paramtypes', [])
                 ], parentChildComponent);
