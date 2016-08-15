@@ -26,6 +26,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 hero_detail_component_1.HeroDetailComponent
             ],
+            // providers:[HeroService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
