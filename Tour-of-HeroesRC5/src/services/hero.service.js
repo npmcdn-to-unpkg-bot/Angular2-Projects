@@ -21,6 +21,10 @@ var HeroService = (function () {
             return setTimeout(function () { return resolve(mock_heroes_1.Heroes); }, 2000);
         });
     };
+    HeroService.prototype.getHero = function (id) {
+        return this.getHeroSlowly()
+            .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
+    };
     HeroService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

@@ -15,4 +15,8 @@ export class HeroService {
   setTimeout(()=>resolve(Heroes),2000)
   );
 }
+  getHero(id:number){
+    return this.getHeroSlowly()
+    .then(heroes => heroes.find(hero => hero.id === id));
+  }
 }
