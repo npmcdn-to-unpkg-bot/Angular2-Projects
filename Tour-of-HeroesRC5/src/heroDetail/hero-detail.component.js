@@ -25,6 +25,9 @@ var HeroDetailComponent = (function () {
                 .then(function (hero) { return console.log(_this.hero = hero); });
         });
     };
+    HeroDetailComponent.prototype.goBack = function () {
+        window.history.back();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', hero_1.Hero)
@@ -32,7 +35,7 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent = __decorate([
         core_1.Component({
             selector: 'hero-detail',
-            template: "\n         <div *ngIf=\"hero\">\n    <h2>{{hero.name}} details!</h2>\n\n    <div>\n        <label>id:</label>\n        {{hero.id}}\n    </div>\n    <div>\n    <label>Name:</label>\n    <input [(ngModel)]=\"hero.name\" placholder=\"name\">\n    </div>\n    </div>\n    "
+            templateUrl: 'src/heroDetail/hero-detail.component.html'
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.ActivatedRoute])
     ], HeroDetailComponent);

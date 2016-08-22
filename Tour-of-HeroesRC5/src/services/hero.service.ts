@@ -12,7 +12,7 @@ export class HeroService {
 
  getHeroSlowly() {
   return new Promise<Hero[]>(resolve =>
-  setTimeout(()=>resolve(Heroes),2000)
+  setTimeout(()=>resolve(Heroes),1000)
   );
 }
   getHero(id:number){

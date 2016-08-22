@@ -5,20 +5,7 @@ import { HeroService } from '../services/hero.service'
 import { Hero } from './hero'
 @Component({
     selector: 'hero-detail',
-    template: `
-         <div *ngIf="hero">
-    <h2>{{hero.name}} details!</h2>
-
-    <div>
-        <label>id:</label>
-        {{hero.id}}
-    </div>
-    <div>
-    <label>Name:</label>
-    <input [(ngModel)]="hero.name" placholder="name">
-    </div>
-    </div>
-    `
+    templateUrl:'src/heroDetail/hero-detail.component.html'
 })
 export class HeroDetailComponent implements OnInit {
     @Input()
@@ -32,5 +19,8 @@ export class HeroDetailComponent implements OnInit {
             this.heroService.getHero(id)
             .then(hero => console.log(this.hero=hero)); 
         })
+    }
+    goBack(){
+        window.history.back();
     }
 }

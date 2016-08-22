@@ -18,7 +18,7 @@ var HeroService = (function () {
     // }
     HeroService.prototype.getHeroSlowly = function () {
         return new Promise(function (resolve) {
-            return setTimeout(function () { return resolve(mock_heroes_1.Heroes); }, 2000);
+            return setTimeout(function () { return resolve(mock_heroes_1.Heroes); }, 1000);
         });
     };
     HeroService.prototype.getHero = function (id) {
